@@ -1,0 +1,23 @@
+@startuml
+
+hide circle
+hide empty members
+
+entity User {
+   * id
+   --
+}
+
+entity Calculation {
+    * id (PK)
+    --
+    * createDate - DateTime of calculation creation
+    * startDate - Дата и время в UTC точки отсчета
+    * startGeom - массив точек, описывающих состояние объекта в начале наблюдения
+    * endDate - DateTime in UTC for end of calculation
+    * int step - step of calculation in hours
+}
+
+Calculation ||--o{ User
+
+@enduml﻿
